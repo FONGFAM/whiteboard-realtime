@@ -1,23 +1,65 @@
 package com.whiteboard.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import java.util.List;
 import java.util.UUID;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class Stroke {
-    @Builder.Default
-    private String id = UUID.randomUUID().toString();
-    
-    private String userId;        // Who drew this stroke
-    private List<Point> points;   // Array of points
-    private String color;         // e.g. "#000000"
-    private double width;         // Line width
-    private long timestamp;       // When stroke was created
+     private String id;
+     private String userId;
+     private List<Point> points;
+     private String color;
+     private double width;
+     private long timestamp;
+
+     public Stroke() {
+          this.id = UUID.randomUUID().toString();
+     }
+
+     public String getId() {
+          return id;
+     }
+
+     public void setId(String id) {
+          this.id = id;
+     }
+
+     public String getUserId() {
+          return userId;
+     }
+
+     public void setUserId(String userId) {
+          this.userId = userId;
+     }
+
+     public List<Point> getPoints() {
+          return points;
+     }
+
+     public void setPoints(List<Point> points) {
+          this.points = points;
+     }
+
+     public String getColor() {
+          return color;
+     }
+
+     public void setColor(String color) {
+          this.color = color;
+     }
+
+     public double getWidth() {
+          return width;
+     }
+
+     public void setWidth(double width) {
+          this.width = width;
+     }
+
+     public long getTimestamp() {
+          return timestamp;
+     }
+
+     public void setTimestamp(long timestamp) {
+          this.timestamp = timestamp;
+     }
 }

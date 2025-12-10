@@ -1,19 +1,50 @@
 package com.whiteboard.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class BoardState {
-    private String boardId;
-    private List<Stroke> strokes = new ArrayList<>();  // All strokes ever drawn
-    private Set<String> hiddenStrokeIds = new HashSet<>();  // Undo/cleared strokes
-    private long lastModified;
+     private String boardId;
+     private List<Stroke> strokes;
+     private Set<String> hiddenStrokeIds;
+     private long lastModified;
+
+     public BoardState() {
+          this.strokes = new ArrayList<>();
+          this.hiddenStrokeIds = new HashSet<>();
+     }
+
+     public String getBoardId() {
+          return boardId;
+     }
+
+     public void setBoardId(String boardId) {
+          this.boardId = boardId;
+     }
+
+     public List<Stroke> getStrokes() {
+          return strokes;
+     }
+
+     public void setStrokes(List<Stroke> strokes) {
+          this.strokes = strokes;
+     }
+
+     public Set<String> getHiddenStrokeIds() {
+          return hiddenStrokeIds;
+     }
+
+     public void setHiddenStrokeIds(Set<String> hiddenStrokeIds) {
+          this.hiddenStrokeIds = hiddenStrokeIds;
+     }
+
+     public long getLastModified() {
+          return lastModified;
+     }
+
+     public void setLastModified(long lastModified) {
+          this.lastModified = lastModified;
+     }
 }

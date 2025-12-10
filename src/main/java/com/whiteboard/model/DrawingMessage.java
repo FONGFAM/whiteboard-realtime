@@ -1,17 +1,61 @@
 package com.whiteboard.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class DrawingMessage {
-    private String type;           // "stroke", "action", "sync-request", etc.
-    private String boardId;
-    private String userId;
-    private Stroke stroke;         // For type="stroke"
-    private String action;         // For type="action": "undo", "redo", "clear"
-    private Object data;           // Additional data
+     private String type;
+     private String boardId;
+     private String userId;
+     private Stroke stroke;
+     private String action;
+     private Object data;
+
+     public DrawingMessage() {
+     }
+
+     public String getType() {
+          return type;
+     }
+
+     public void setType(String type) {
+          this.type = type;
+     }
+
+     public String getBoardId() {
+          return boardId;
+     }
+
+     public void setBoardId(String boardId) {
+          this.boardId = boardId;
+     }
+
+     public String getUserId() {
+          return userId;
+     }
+
+     public void setUserId(String userId) {
+          this.userId = userId;
+     }
+
+     public Stroke getStroke() {
+          return stroke;
+     }
+
+     public void setStroke(Stroke stroke) {
+          this.stroke = stroke;
+     }
+
+     public String getAction() {
+          return action;
+     }
+
+     public void setAction(String action) {
+          this.action = action;
+     }
+
+     public Object getData() {
+          return data;
+     }
+
+     public void setData(Object data) {
+          this.data = data;
+     }
 }

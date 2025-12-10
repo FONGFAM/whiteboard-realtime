@@ -10,23 +10,23 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @EnableWebSocketMessageBroker
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
-    @Override
-    public void configureMessageBroker(MessageBrokerRegistry config) {
-        // Enable simple memory-based message broker for topics
-        config.enableSimpleBroker("/topic", "/queue");
-        
-        // Prefix for messages routed to @MessageMapping methods
-        config.setApplicationDestinationPrefixes("/app");
-        
-        // Optional: set user destination prefix
-        config.setUserDestinationPrefix("/user");
-    }
+     @Override
+     public void configureMessageBroker(MessageBrokerRegistry config) {
+          // Enable simple memory-based message broker for topics
+          config.enableSimpleBroker("/topic", "/queue");
 
-    @Override
-    public void registerStompEndpoints(StompEndpointRegistry registry) {
-        // Register STOMP endpoint with SockJS fallback
-        registry.addEndpoint("/ws-whiteboard")
-                .setAllowedOrigins("*")
-                .withSockJS();
-    }
+          // Prefix for messages routed to @MessageMapping methods
+          config.setApplicationDestinationPrefixes("/app");
+
+          // Optional: set user destination prefix
+          config.setUserDestinationPrefix("/user");
+     }
+
+     @Override
+     public void registerStompEndpoints(StompEndpointRegistry registry) {
+          // Register STOMP endpoint with SockJS fallback
+          registry.addEndpoint("/ws-whiteboard")
+                    .setAllowedOrigins("*")
+                    .withSockJS();
+     }
 }
