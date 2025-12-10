@@ -31,12 +31,14 @@ Open `http://localhost:8080` and start drawing. Open a second tab to see realtim
 
 ## UI Controls
 
+```
 | Control         | Function             |
 | --------------- | -------------------- |
 | Board ID        | Join different rooms |
 | Color Picker    | Drawing color        |
 | Width Slider    | Line thickness       |
 | Undo/Redo/Clear | Canvas operations    |
+```
 
 ## Testing
 
@@ -48,6 +50,7 @@ Open `http://localhost:8080` and start drawing. Open a second tab to see realtim
 
 ## Troubleshooting
 
+```
 | Issue                 | Solution                                      |
 | --------------------- | --------------------------------------------- |
 | WebSocket fails       | Ensure backend running on port 8080           |
@@ -62,6 +65,7 @@ Open `http://localhost:8080` and start drawing. Open a second tab to see realtim
 - Eraser & shapes tools
 - Recording & playback
 - Export as PNG/PDF
+```
 
 ## License
 
