@@ -26,7 +26,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
      public void registerStompEndpoints(StompEndpointRegistry registry) {
           // Register STOMP endpoint with SockJS fallback
           registry.addEndpoint("/ws-whiteboard")
-                    .setAllowedOrigins("*")
+                    .setAllowedOriginPatterns("*")
                     .withSockJS();
      }
 }
