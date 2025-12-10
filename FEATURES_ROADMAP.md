@@ -1,8 +1,8 @@
-# 🎯 Features & Roadmap
+# Features & Roadmap
 
-## 🟢 Current Release (v1.0.0 - MVP)
+## Current Release (v1.0.0 - MVP)
 
-### Core Features ✅
+### Core Features 
 
 #### Drawing & Rendering
 - [x] Real-time stroke synchronization
@@ -45,13 +45,13 @@
 
 ---
 
-## 🟡 Planned (v1.1 - Polish & Polish)
+## Planned (v1.1 - Polish & Polish)
 
 ### UI/UX Improvements
 - [ ] Keyboard shortcuts:
-  - `Ctrl+Z` / `Cmd+Z` for Undo
-  - `Ctrl+Y` / `Cmd+Y` for Redo
-  - `Ctrl+Shift+C` for Clear
+ - `Ctrl+Z` / `Cmd+Z` for Undo
+ - `Ctrl+Y` / `Cmd+Y` for Redo
+ - `Ctrl+Shift+C` for Clear
 - [ ] Touch input optimization (mobile)
 - [ ] Better error messages
 - [ ] Toast notifications for actions
@@ -72,7 +72,7 @@
 
 ---
 
-## 🟠 v2.0 - Enterprise & Persistence
+## v2.0 - Enterprise & Persistence
 
 ### Database Integration
 - [ ] MongoDB integration for board persistence
@@ -92,19 +92,19 @@
 - [ ] User login/registration
 - [ ] Board ownership concept
 - [ ] Role-based access:
-  - `Owner`: Full control (edit, delete, share)
-  - `Editor`: Can draw and manage
-  - `Viewer`: Read-only access
+ - `Owner`: Full control (edit, delete, share)
+ - `Editor`: Can draw and manage
+ - `Viewer`: Read-only access
 - [ ] Share board with specific users
 - [ ] Audit logging (who did what when)
 
 ### Advanced Tools
 - [ ] Eraser tool (permanent deletion)
 - [ ] Shapes:
-  - Rectangle
-  - Circle/Ellipse
-  - Line (straight line assist)
-  - Triangle
+ - Rectangle
+ - Circle/Ellipse
+ - Line (straight line assist)
+ - Triangle
 - [ ] Text tool with font selection
 - [ ] Fill bucket tool
 - [ ] Select & move tool
@@ -119,7 +119,7 @@
 
 ---
 
-## 🔴 v3.0 - Production Ready & Scale
+## v3.0 - Production Ready & Scale
 
 ### DevOps & Deployment
 - [ ] Docker containerization
@@ -156,10 +156,10 @@
 - [ ] Presence indicators (online users)
 - [ ] Comments & annotations
 - [ ] Export to:
-  - PNG/JPEG
-  - PDF
-  - SVG
-  - PowerPoint
+ - PNG/JPEG
+ - PDF
+ - SVG
+ - PowerPoint
 - [ ] Print support
 - [ ] Cloud storage integration (Google Drive, OneDrive)
 - [ ] Integrated chat/messaging
@@ -183,60 +183,60 @@
 
 ---
 
-## 📊 Feature Priority Matrix
+## Feature Priority Matrix
 
 ```
 High Impact, Low Effort (Do First):
-├── [ ] Keyboard shortcuts (v1.1)
-├── [ ] Database persistence (v2.0)
-└── [ ] Docker support (v3.0)
+ [ ] Keyboard shortcuts (v1.1)
+ [ ] Database persistence (v2.0)
+ [ ] Docker support (v3.0)
 
 High Impact, High Effort (Plan):
-├── [ ] Mobile apps (v3.0)
-├── [ ] Advanced tools (v2.0)
-└── [ ] Recording/playback (v2.0)
+ [ ] Mobile apps (v3.0)
+ [ ] Advanced tools (v2.0)
+ [ ] Recording/playback (v2.0)
 
 Low Impact, Low Effort (Nice-to-Have):
-├── [ ] Toast notifications (v1.1)
-├── [ ] User list sidebar (v1.1)
-└── [ ] Cursor position sharing (v1.1)
+ [ ] Toast notifications (v1.1)
+ [ ] User list sidebar (v1.1)
+ [ ] Cursor position sharing (v1.1)
 
 Low Impact, High Effort (Skip):
-├── [ ] Real-time audio
-├── [ ] Video conferencing
-└── [ ] AI-powered sketching
+ [ ] Real-time audio
+ [ ] Video conferencing
+ [ ] AI-powered sketching
 ```
 
 ---
 
-## 🚀 Release Timeline (Estimated)
+## Release Timeline (Estimated)
 
 | Version | Focus | Target Date |
 |---------|-------|-------------|
-| **v1.0** | MVP - Core functionality | ✅ Dec 2025 |
+| **v1.0** | MVP - Core functionality | Dec 2025 |
 | **v1.1** | Polish & UX improvements | Q1 2026 |
 | **v2.0** | Enterprise features | Q2 2026 |
 | **v3.0** | Production & mobile | Q3 2026 |
 
 ---
 
-## 📈 Metrics for Success
+## Metrics for Success
 
-### MVP (v1.0) Goals ✅
+### MVP (v1.0) Goals 
 - [x] 2+ concurrent users
 - [x] <100ms latency
 - [x] Stable (no crashes in 1 hour test)
 - [x] Intuitive UI (first-time user understands)
 - [x] Documentation complete
 
-### v2.0 Goals 🎯
+### v2.0 Goals 
 - [ ] 100+ concurrent users
 - [ ] Persistent data (24h+ uptime)
 - [ ] 99% availability
 - [ ] Multi-instance support (scale horizontal)
 - [ ] Enterprise auth
 
-### v3.0 Goals 🚀
+### v3.0 Goals 
 - [ ] 10,000+ concurrent users
 - [ ] 99.9% availability (high availability)
 - [ ] Global CDN deployment
@@ -246,7 +246,7 @@ Low Impact, High Effort (Skip):
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 To contribute features:
 
@@ -258,7 +258,7 @@ To contribute features:
 
 ---
 
-## 💬 Feedback & Requests
+## Feedback & Requests
 
 Have ideas? Open an issue with the `feature-request` label.
 
@@ -267,4 +267,4 @@ Popular requests will be prioritized.
 ---
 
 **Last Updated**: December 10, 2025
-**Status**: MVP Complete ✅ | v1.1+ In Planning 📅
+**Status**: MVP Complete | v1.1+ In Planning 

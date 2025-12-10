@@ -1,8 +1,8 @@
-# 📝 CHANGELOG
+# CHANGELOG
 
 ## [1.0.0] - 2025-12-10 - MVP Release
 
-### ✅ Completed Features
+### Completed Features
 
 #### Backend (Java/Spring Boot)
 - [x] WebSocket server setup with STOMP + SockJS
@@ -10,14 +10,14 @@
 - [x] Board state management (in-memory)
 - [x] Stroke model and data structures
 - [x] Message handling controller:
-  - [x] `/app/stroke/{boardId}` - receive and broadcast strokes
-  - [x] `/app/sync/{boardId}` - full state sync on join
-  - [x] `/app/action/{boardId}` - undo/redo/clear actions
+ - [x] `/app/stroke/{boardId}` - receive and broadcast strokes
+ - [x] `/app/sync/{boardId}` - full state sync on join
+ - [x] `/app/action/{boardId}` - undo/redo/clear actions
 - [x] BoardService with business logic:
-  - [x] addStroke()
-  - [x] undoLastStroke() per-user
-  - [x] redoLastStroke() per-user
-  - [x] clearBoard() selective
+ - [x] addStroke()
+ - [x] undoLastStroke() per-user
+ - [x] redoLastStroke() per-user
+ - [x] clearBoard() selective
 - [x] Health check endpoint (`/health`)
 - [x] Logging with SLF4J
 - [x] Maven build configuration
@@ -28,26 +28,26 @@
 - [x] Local drawing rendering (real-time visual feedback)
 - [x] Point accumulation and throttling (~60fps)
 - [x] STOMP/WebSocket client setup:
-  - [x] SockJS + StompJS integration
-  - [x] Auto-reconnect on disconnect
-  - [x] Topic subscription
+ - [x] SockJS + StompJS integration
+ - [x] Auto-reconnect on disconnect
+ - [x] Topic subscription
 - [x] Message sending:
-  - [x] Send stroke to server
-  - [x] Request full state sync
-  - [x] Send action commands
+ - [x] Send stroke to server
+ - [x] Request full state sync
+ - [x] Send action commands
 - [x] Message receiving and handling:
-  - [x] Remote stroke rendering
-  - [x] Full state sync on join
-  - [x] Action processing
+ - [x] Remote stroke rendering
+ - [x] Full state sync on join
+ - [x] Action processing
 - [x] UI Toolbar:
-  - [x] Color picker
-  - [x] Line width slider (1-20px)
-  - [x] Undo button
-  - [x] Redo button
-  - [x] Clear button
-  - [x] Board ID input
-  - [x] Join Board button
-  - [x] Connection status indicator
+ - [x] Color picker
+ - [x] Line width slider (1-20px)
+ - [x] Undo button
+ - [x] Redo button
+ - [x] Clear button
+ - [x] Board ID input
+ - [x] Join Board button
+ - [x] Connection status indicator
 - [x] CSS styling (gradient header, responsive layout)
 - [x] LocalStorage for user ID persistence
 
@@ -60,29 +60,29 @@
 - [x] Server starts without errors
 - [x] Frontend loads at http://localhost:8080
 
-### 🎯 Key Features
+### Key Features
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Realtime Stroke Sync | ✅ | <100ms latency |
-| Multi-user Drawing | ✅ | Per-user ID tracking |
-| Undo/Redo Per-User | ✅ | Selective undo |
-| Clear Board | ✅ | Hides only user's strokes |
-| Room-based Boards | ✅ | Join by board ID |
-| Full State Sync | ✅ | New client gets history |
-| Color Picking | ✅ | RGB hex colors |
-| Line Width | ✅ | 1-20px range |
-| Connection Status | ✅ | Real-time indicator |
-| Auto-reconnect | ✅ | 3s retry interval |
+| Realtime Stroke Sync | | <100ms latency |
+| Multi-user Drawing | | Per-user ID tracking |
+| Undo/Redo Per-User | | Selective undo |
+| Clear Board | | Hides only user's strokes |
+| Room-based Boards | | Join by board ID |
+| Full State Sync | | New client gets history |
+| Color Picking | | RGB hex colors |
+| Line Width | | 1-20px range |
+| Connection Status | | Real-time indicator |
+| Auto-reconnect | | 3s retry interval |
 
-### 📊 Architecture Highlights
+### Architecture Highlights
 
 ```
 Frontend → STOMP/WebSocket → Backend STOMP Server → SimpleBroker
-                                    ↓
-                              BoardService (in-memory)
-                                    ↓
-                          Broadcasts to all subscribers
+ ↓
+ BoardService (in-memory)
+ ↓
+ Broadcasts to all subscribers
 ```
 
 - **Single Backend Instance**: 1 Spring Boot process
@@ -90,25 +90,25 @@ Frontend → STOMP/WebSocket → Backend STOMP Server → SimpleBroker
 - **Message Format**: JSON (STOMP)
 - **Broadcast Model**: STOMP SimpleBroker
 
-### 🧪 Testing Results
+### Testing Results
 
-- ✅ Server starts successfully on port 8080
-- ✅ Frontend loads and connects
-- ✅ Draw strokes sync between clients
-- ✅ Undo/redo work per-user
-- ✅ New clients receive full state
-- ✅ Board isolation works
-- ✅ UI controls responsive
-- ✅ No apparent lag/latency
+- Server starts successfully on port 8080
+- Frontend loads and connects
+- Draw strokes sync between clients
+- Undo/redo work per-user
+- New clients receive full state
+- Board isolation works
+- UI controls responsive
+- No apparent lag/latency
 
-### 📦 Build & Deployment
+### Build & Deployment
 
 - **Build**: `mvn clean package` (successful)
 - **Output**: `target/realtime-whiteboard-1.0.0-SNAPSHOT.jar`
 - **Execution**: `java -jar realtime-whiteboard-1.0.0-SNAPSHOT.jar`
 - **Port**: 8080 (configurable)
 
-### 📝 Code Statistics
+### Code Statistics
 
 | Metric | Count |
 |--------|-------|
@@ -120,7 +120,7 @@ Frontend → STOMP/WebSocket → Backend STOMP Server → SimpleBroker
 | Documentation Files | 3 (README, DEMO, ARCHITECTURE) |
 | **Total Lines of Code** | ~1500 |
 
-### ⚠️ Known Limitations
+### Known Limitations
 
 1. **No Persistence**: Board state lost on server restart
 2. **No Authentication**: Any user can join any board
@@ -130,7 +130,7 @@ Frontend → STOMP/WebSocket → Backend STOMP Server → SimpleBroker
 6. **No Recording**: Can't replay drawing session
 7. **No Export**: Can't save as image/PDF
 
-### 🚀 Next Steps (v2+)
+### Next Steps (v2+)
 
 - [ ] Database persistence (MongoDB/Postgres)
 - [ ] Redis pub/sub for multi-instance
@@ -144,39 +144,39 @@ Frontend → STOMP/WebSocket → Backend STOMP Server → SimpleBroker
 - [ ] Docker containerization
 - [ ] CI/CD pipeline (GitHub Actions)
 
-### 📚 Files Added
+### Files Added
 
 ```
 .
-├── pom.xml
-├── README.md
-├── DEMO.md
-├── ARCHITECTURE.md
-├── CHANGELOG.md (this file)
-│
-├── src/main/java/com/whiteboard/
-│   ├── WhiteboardApplication.java
-│   ├── config/WebSocketConfig.java
-│   ├── controller/DrawingController.java
-│   ├── model/
-│   │   ├── Point.java
-│   │   ├── Stroke.java
-│   │   ├── BoardState.java
-│   │   └── DrawingMessage.java
-│   └── service/BoardService.java
-│
-└── src/main/resources/
-    ├── application.properties
-    └── static/
-        ├── index.html
-        ├── css/style.css
-        └── js/
-            ├── app.js
-            ├── canvas.js
-            └── socket.js
+ pom.xml
+ README.md
+ DEMO.md
+ ARCHITECTURE.md
+ CHANGELOG.md (this file)
+
+ src/main/java/com/whiteboard/
+ WhiteboardApplication.java
+ config/WebSocketConfig.java
+ controller/DrawingController.java
+ model/
+ Point.java
+ Stroke.java
+ BoardState.java
+ DrawingMessage.java
+ service/BoardService.java
+
+ src/main/resources/
+ application.properties
+ static/
+ index.html
+ css/style.css
+ js/
+ app.js
+ canvas.js
+ socket.js
 ```
 
-### 🙏 Acknowledgments
+### Acknowledgments
 
 - Spring Boot team for excellent WebSocket support
 - HTML5 Canvas API documentation
@@ -209,4 +209,4 @@ Frontend → STOMP/WebSocket → Backend STOMP Server → SimpleBroker
 ---
 
 **MVP Release Date**: December 10, 2025
-**Status**: ✅ Ready for Demo & Thesis Submission
+**Status**: Ready for Demo & Thesis Submission

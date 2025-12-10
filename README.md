@@ -1,69 +1,69 @@
-# 🎨 Realtime Whiteboard
+# Realtime Whiteboard
 
 A multi-user realtime drawing application built with **Spring Boot WebSocket (STOMP)** backend and **HTML5 Canvas + JavaScript** frontend.
 
-## 📋 Features
+## Features
 
 ### MVP (v1)
-- ✅ Realtime stroke sync between multiple clients
-- ✅ Room-based boards (join by board ID)
-- ✅ Per-user Undo/Redo
-- ✅ Toolbar: color picker, line width slider, clear button
-- ✅ Full state sync on client join
-- ✅ In-memory board state management
+- Realtime stroke sync between multiple clients
+- Room-based boards (join by board ID)
+- Per-user Undo/Redo
+- Toolbar: color picker, line width slider, clear button
+- Full state sync on client join
+- In-memory board state management
 
-## 🏗️ Architecture
+## Architecture
 
 ```
-┌─ Backend (Java/Spring Boot)
-│  ├─ WebSocket Server (STOMP + SockJS)
-│  ├─ BoardService (in-memory state mgmt)
-│  └─ DrawingController (message handler)
-│
-└─ Frontend (HTML5 Canvas + JS)
-   ├─ Canvas drawing engine
-   ├─ STOMP client
-   └─ UI (color picker, toolbar)
+ Backend (Java/Spring Boot)
+ WebSocket Server (STOMP + SockJS)
+ BoardService (in-memory state mgmt)
+ DrawingController (message handler)
+
+ Frontend (HTML5 Canvas + JS)
+ Canvas drawing engine
+ STOMP client
+ UI (color picker, toolbar)
 ```
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend**: Spring Boot 3.2 + Spring WebSocket (STOMP) + Maven
 - **Frontend**: HTML5 Canvas, Vanilla JavaScript, SockJS, StompJS
 - **Java Version**: JDK 17+
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 whiteboard-realtime/
-├── src/main/java/com/whiteboard/
-│   ├── config/
-│   │   └── WebSocketConfig.java      # STOMP configuration
-│   ├── controller/
-│   │   └── DrawingController.java    # Message handlers
-│   ├── model/
-│   │   ├── Stroke.java
-│   │   ├── Point.java
-│   │   ├── BoardState.java
-│   │   └── DrawingMessage.java
-│   ├── service/
-│   │   └── BoardService.java         # Business logic
-│   └── WhiteboardApplication.java    # Main class
-│
-├── src/main/resources/
-│   ├── static/
-│   │   ├── index.html
-│   │   ├── css/style.css
-│   │   └── js/
-│   │       ├── app.js
-│   │       ├── canvas.js
-│   │       └── socket.js
-│   └── application.properties
-│
-└── pom.xml
+ src/main/java/com/whiteboard/
+ config/
+ WebSocketConfig.java # STOMP configuration
+ controller/
+ DrawingController.java # Message handlers
+ model/
+ Stroke.java
+ Point.java
+ BoardState.java
+ DrawingMessage.java
+ service/
+ BoardService.java # Business logic
+ WhiteboardApplication.java # Main class
+
+ src/main/resources/
+ static/
+ index.html
+ css/style.css
+ js/
+ app.js
+ canvas.js
+ socket.js
+ application.properties
+
+ pom.xml
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Java Development Kit (JDK) 17 or higher
@@ -107,7 +107,7 @@ Server will start at `http://localhost:8080`
 
 **Step 5**: Try changing Board ID to join different rooms
 
-## 📡 Message Protocol
+## Message Protocol
 
 ### WebSocket Endpoints
 
@@ -121,15 +121,15 @@ Client sends to: /app/stroke/{boardId}
 Server broadcasts to: /topic/board/{boardId}
 
 {
-  "type": "stroke",
-  "userId": "user_abc123",
-  "points": [
-    {"x": 10, "y": 20},
-    {"x": 15, "y": 25},
-    ...
-  ],
-  "color": "#000000",
-  "width": 3
+ "type": "stroke",
+ "userId": "user_abc123",
+ "points": [
+ {"x": 10, "y": 20},
+ {"x": 15, "y": 25},
+ ...
+ ],
+ "color": "#000000",
+ "width": 3
 }
 ```
 
@@ -139,12 +139,12 @@ Client sends to: /app/sync/{boardId}
 Server responds on: /topic/board/{boardId}
 
 Server returns: {
-  "type": "full-state",
-  "data": {
-    "boardId": "board1",
-    "strokes": [...],
-    "hiddenStrokeIds": [...]
-  }
+ "type": "full-state",
+ "data": {
+ "boardId": "board1",
+ "strokes": [...],
+ "hiddenStrokeIds": [...]
+ }
 }
 ```
 
@@ -153,13 +153,13 @@ Server returns: {
 Client sends to: /app/action/{boardId}
 
 {
-  "type": "action",
-  "userId": "user_abc123",
-  "action": "undo" | "redo" | "clear"
+ "type": "action",
+ "userId": "user_abc123",
+ "action": "undo" | "redo" | "clear"
 }
 ```
 
-## 🎮 UI Controls
+## UI Controls
 
 - **Board ID Input**: Join a specific board (default: `board1`)
 - **Color Picker**: Select drawing color
@@ -169,7 +169,7 @@ Client sends to: /app/action/{boardId}
 - **Clear Button**: Clear all your strokes from board
 - **Canvas**: Draw by clicking and dragging
 
-## 🧪 Testing
+## Testing
 
 ### Manual Testing Checklist
 
@@ -189,16 +189,16 @@ Client sends to: /app/action/{boardId}
 
 Use browser DevTools Network tab to monitor WebSocket messages or create a script to simulate multiple clients.
 
-## 🔧 Configuration
+## Configuration
 
 Edit `src/main/resources/application.properties`:
 
 ```properties
-server.port=8080                              # Server port
-logging.level.com.whiteboard=DEBUG            # Debug logging
+server.port=8080 # Server port
+logging.level.com.whiteboard=DEBUG # Debug logging
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 | Issue | Solution |
 |-------|----------|
@@ -207,13 +207,13 @@ logging.level.com.whiteboard=DEBUG            # Debug logging
 | Undo/Redo not working | Ensure both clients are connected to same board |
 | Server crashes with StackOverflow | Check for infinite loops in message handling |
 
-## 📈 Performance Notes
+## Performance Notes
 
 - **Stroke Throttling**: Client samples pointer events at ~60fps to reduce network traffic
 - **In-Memory Storage**: Board state stored in HashMap (no persistence yet)
 - **Broadcast**: STOMP broker ensures all subscribers receive updates
 
-## 🎯 Future Enhancements (v2+)
+## Future Enhancements (v2+)
 
 - [ ] Persist board state to database (MongoDB/Postgres)
 - [ ] Redis pub/sub for multi-instance deployment
@@ -227,18 +227,18 @@ logging.level.com.whiteboard=DEBUG            # Debug logging
 - [ ] Export as PNG/PDF
 - [ ] Real-time chat integration
 
-## 📝 License
+## License
 
 MIT License
 
-## 👥 Authors
+## Authors
 
 - Whiteboard Project Team
 
 ---
 
-## 📞 Support
+## Support
 
 For issues or questions, refer to the troubleshooting section or create an issue.
 
-**Happy Drawing! 🎨**
+**Happy Drawing! **
