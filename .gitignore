@@ -1,0 +1,35 @@
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.swp
+*.swo
+
+# Maven
+target/
+*.jar
+*.war
+*.ear
+.classpath
+.project
+.settings/
+bin/
+
+# Node (for frontend dev)
+node_modules/
+dist/
+.parcel-cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Local env
+.env
+.env.local
